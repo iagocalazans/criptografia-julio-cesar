@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h2>Criptografia de Júlio César</h2>
+        </header>
+
+        <main>
+            <section class="encrypt">
+                <table>
+                    <thead>
+                        <th>Histórico Criptografia</th>
+                    </thead>
+                    <tbody class="tbodyEncrypt">
+
+                    </tbody>
+                </table>
+
+                <form id="formEncrypt">
+                        <textarea id="textEncrypt" name="name" rows="10" cols="80"></textarea>
+                        <button type="submit" name="button" id="btnEncrypt">Criptografar</button>
+                </form>
+            </section>
+
+            <section class="decrypt">
+                <table>
+                    <thead>
+                        <th>Histórico Descriptografia</th>
+                    </thead>
+                    <tbody class="tbodyDecrypt">
+
+                    </tbody>
+                </table>
+
+                <form id="formDecrypt">
+                        <textarea id="textDecrypt" name="name" rows="10" cols="80"></textarea>
+                        <button type="submit" name="button" id="btnDecrypt">Descriptografar</button>
+                </form>
+            </section>
+        </main>
+
+
+
+
+        <script src="js/action.js"></script>
+        <script src="js/form.js"></script>
+    </body>
+</html>
