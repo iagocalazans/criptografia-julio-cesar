@@ -1,5 +1,5 @@
 var encryption = document.querySelector(".encryptionRate");
-const encryptionRate;
+var encryptionRate;
 encryption.addEventListener("change", function(event) {
     if (this.value > 25 || this.value < 1) {
         this.value = 3;
@@ -32,7 +32,7 @@ decrypt.addEventListener("click", function(event) {
     }
 
     var action = new Action(str, encryptionRate);
-    this.mount("decrypt", ".tbodyDecrypt", action);
+    mount("decrypt", ".tbodyDecrypt", action);
 });
 
 function mount(action, query, object) {
