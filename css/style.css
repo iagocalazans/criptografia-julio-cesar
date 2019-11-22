@@ -11,6 +11,13 @@ h2 {
     width: fit-content;
 }
 
+h3 {
+    text-align: center;
+    color: #999;
+    font-size: 2em;
+    margin: 0 15px;
+}
+
 section {
     width: 60%;
     margin: 50px auto 0 auto;
@@ -30,6 +37,13 @@ label {
 p {
     display: block;
     margin: 15px;
+}
+
+.github {
+    text-align: center;
+    color: #999;
+    font-size: 1em;
+    margin-top: 5px;
 }
 
 table {
