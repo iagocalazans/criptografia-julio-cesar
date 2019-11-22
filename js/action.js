@@ -1,16 +1,23 @@
 class Action {
     alphabet = "abcdefghijklmnopqrstuvwxyz";
     text;
+    encryptionRate = 3;
+    totalChar = this.alphabet.length;
 
-    constructor(str) {
+    constructor(str, encryptionRate = null) {
         this.text = Array.from(str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
+        if (encryptionRate) {
+            this.encryptionRate = encryptionRate;
+        }
     }
 
     encrypt(find) {
-        var char = this.alphabet.charAt(find+3);
+        find = +find + +this.encryptionRate;
 
-        if (find > 22) {
-            var reset = find + 3 - 26;
+        var char = this.alphabet.charAt(find);
+
+        if (find >= 26) {
+            var reset = find - this.totalChar;
             char = this.alphabet.charAt(reset);
         }
 
@@ -18,10 +25,12 @@ class Action {
     }
 
     decrypt(find) {
-        var char = this.alphabet.charAt(find-3);
+        find = +find - +this.encryptionRate;
 
-        if (find < 3) {
-            var reset = find - 3 + 26;
+        var char = this.alphabet.charAt(find);
+
+        if (find < 0) {
+            var reset = find + this.totalChar;
             char = this.alphabet.charAt(reset);
         }
 

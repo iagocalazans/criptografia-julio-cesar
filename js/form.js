@@ -1,6 +1,15 @@
+const encryptionRate = document.querySelector(".encryptionRate");
+encryptionRate.addEventListener("change", function(event) {
+    if (this.value > 25 || this.value < 1) {
+        this.value = 3;
+    }
+});
+
 var encrypt = document.getElementById("btnEncrypt");
 encrypt.addEventListener("click", function(event){
     event.preventDefault();
+
+    const encryptionRate = document.querySelector(".encryptionRate").value;
 
     const str = document.getElementById("textEncrypt").value;
 
@@ -8,7 +17,7 @@ encrypt.addEventListener("click", function(event){
         return;
     }
 
-    var action = new Action(str);
+    var action = new Action(str, encryptionRate);
 
     var tbody = document.querySelector(".tbodyEncrypt");
     var td = document.createElement("td");
@@ -16,13 +25,13 @@ encrypt.addEventListener("click", function(event){
     var tr = document.createElement("tr");
     tr.appendChild(td);
     tbody.appendChild(tr);
-
-    alert("Sua criptografia é: "+td.textContent);
 });
 
 var decrypt = document.getElementById("btnDecrypt");
 decrypt.addEventListener("click", function(event) {
     event.preventDefault();
+
+    var encryptionRate = document.querySelector(".encryptionRate").value;
 
     const str = document.getElementById("textDecrypt").value;
 
@@ -30,7 +39,7 @@ decrypt.addEventListener("click", function(event) {
         return;
     }
 
-    var action = new Action(str);
+    var action = new Action(str, encryptionRate);
 
     var tbody = document.querySelector(".tbodyDecrypt");
     var td = document.createElement("td");
@@ -38,6 +47,4 @@ decrypt.addEventListener("click", function(event) {
     var tr = document.createElement("tr");
     tr.appendChild(td);
     tbody.appendChild(tr);
-
-    alert("Sua descriptografia é: "+td.textContent);
 });

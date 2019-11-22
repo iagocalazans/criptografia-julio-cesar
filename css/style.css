@@ -16,6 +16,22 @@ section {
     margin: 50px auto 0 auto;
 }
 
+label {
+    font-size: 1.5em;
+    display: block;
+}
+
+.encryptionRate {
+    text-align: center;
+    width: 35px;
+    font-size: 1.5em;
+}
+
+p {
+    display: block;
+    margin: 15px;
+}
+
 table {
     margin-bottom: 20px;
     width: 100%;
@@ -47,5 +63,5 @@ button {
     font-size: 1.5em;
     border: none;
     padding: 20px;
-    margin: 15px 0 0 0;
+    margin: 15px 0 15px 0;
 }
